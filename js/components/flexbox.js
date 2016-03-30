@@ -1,4 +1,5 @@
 import React from 'react';
+import {COLOR_EMPTY, COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, COLOR_BLUE, COLOR_PURPLE} from '../constants';
 
 export class Container extends React.Component {
   static defaultStyle = {
@@ -24,10 +25,8 @@ export class Row extends React.Component {
   };
 
   render() {
-    console.log('rows', this.props.row);
-    const boxes = this.props.row.map((selected, i) => {
-
-      return <Box key={i} selected={selected} />;
+    const boxes = this.props.row.map((attr, i) => {
+      return <Box key={i} attr={attr} />;
     });
     const style = Object.assign({}, Row.defaultStyle, this.props.style);
 
@@ -52,9 +51,40 @@ export class Box extends React.Component {
   render() {
     let style = Object.assign({}, Box.defaultStyle, this.props.style);
 
-    if (this.props.selected === 1) {
+    console.log(this.props.attr.color);
+    switch(this.props.attr.color) {
+      case COLOR_EMPTY:
+        style = Object.assign({}, style, {backgroundColor: "white"});
+        break;
+      case COLOR_RED:
+        style = Object.assign({}, style, {backgroundColor: "red"});
+        break;
+      case COLOR_ORANGE:
+        style = Object.assign({}, style, {backgroundColor: "orange"});
+        break;
+      case COLOR_YELLOW:
+        style = Object.assign({}, style, {backgroundColor: "yellow"});
+        break;
+      case COLOR_GREEN:
+        style = Object.assign({}, style, {backgroundColor: "green"});
+        break;
+      case COLOR_BLUE:
+        style = Object.assign({}, style, {backgroundColor: "blue"});
+        break;
+      case COLOR_PURPLE:
+        style = Object.assign({}, style, {backgroundColor: "purple"});
+        break;
+      default:
+        style = Object.assign({}, style, {backgroundColor: "black"});
+        break;
+    }
+
+    if (this.props.attr.selected) {
       style = Object.assign({}, style, {borderColor: "blue"});
     }
+
+
+    // console.log(JSON.stringify(style));
 
     return (
       <div className="box" style={style} x={this.props.x} y={this.props.y}></div>
