@@ -5,6 +5,7 @@ import {COLOR_EMPTY, COLOR_RED, COLOR_ORANGE} from '../constants';
 const initialState = {
   x: 1,
   y: 12,
+  boundY: 3,
   matrix: initMatrix()
 };
 
@@ -46,7 +47,7 @@ function initMatrix() {
 export default function(state = initialState, action) {
   if ((state.x === 1 && action.key === KEY_LEFT) ||
       (state.x === 5 && action.key === KEY_RIGHT) ||
-      (state.y === 1 && action.key === KEY_UP) ||
+      (state.y === state.boundY && action.key === KEY_UP) ||
       (state.y === 12 && action.key === KEY_DOWN)) {
     return state;
   }
