@@ -7,7 +7,6 @@ export default class extends React.Component {
       <div>
         <p>This is the homepage.</p>
         <p><Link to='/about'>Go to About</Link></p>
-        <Link to='/redux'>Go to Redux demo</Link>
         <Link to='/game'>Go to Game</Link>
       </div>
     );

@@ -1,10 +1,26 @@
 import React from 'react';
 import Grid from '../components/grid';
+import {connect} from 'react-redux';
+import {createBoard} from '../actions/createBoard';
 
-export default class extends React.Component {
+class game extends React.Component {
   render() {
     return (
-      <Grid />
+      <div>
+        <button onClick={() => { this.props.createBoard() }}>
+          Reset Board
+        </button>
+        <Grid />
+      </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {};
+}
+
+export default connect(
+  mapStateToProps,
+  {createBoard}
+)(game)

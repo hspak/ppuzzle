@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 
 import * as reducers from './reducers';
-import {App, Home, About, ReduxDemo, Game} from './containers/index';
+import {App, Home, About, Game} from './containers/index';
 
 import keyPress from './actions/keyPress';
 
@@ -23,7 +23,6 @@ const routes = (
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
       <Route path="about" component={About} />
-      <Route path="redux" component={ReduxDemo} />
       <Route path="game" component={Game} />
     </Route>
   </Router>
