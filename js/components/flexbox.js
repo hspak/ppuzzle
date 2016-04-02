@@ -51,7 +51,6 @@ export class Box extends React.Component {
   render() {
     let style = Object.assign({}, Box.defaultStyle, this.props.style);
 
-    console.log(this.props.attr.color);
     switch(this.props.attr.color) {
       case COLOR_EMPTY:
         style = Object.assign({}, style, {backgroundColor: "white"});
@@ -82,9 +81,6 @@ export class Box extends React.Component {
     if (this.props.attr.selected) {
       style = Object.assign({}, style, {borderColor: "blue"});
     }
-
-
-    // console.log(JSON.stringify(style));
 
     return (
       <div className="box" style={style} x={this.props.x} y={this.props.y}></div>
