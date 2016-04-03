@@ -9,6 +9,7 @@ import * as reducers from './reducers';
 import {App, Home, About, Game} from './containers/index';
 
 import keyPress from './actions/keyPress';
+import dropTimer from './actions/timer';
 
 const reducer = combineReducers({
   ...reducers,
@@ -33,6 +34,10 @@ window.addEventListener('keydown', (e) => {
   var code = e.keyCode ? e.keyCode : e.which;
   store.dispatch(keyPress(code));
 });
+
+setInterval(() => {
+  store.dispatch((dropTimer()));
+}, 1000);
 
 // store.subscribe(() => {
   // console.log(store.getState().move.matrix)}

@@ -19,3 +19,6 @@ export const COLOR_YELLOW = 3;
 export const COLOR_GREEN = 4;
 export const COLOR_BLUE = 5;
 export const COLOR_PURPLE = 6;
+
+export const TIMER_TICK = 'TIMER_TICK';
+export const TIMER_STARTED = 'TIMER_STARTED';
