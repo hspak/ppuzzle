@@ -25,6 +25,7 @@ const routes = (
       <IndexRoute component={Home} />
       <Route path="about" component={About} />
       <Route path="game" component={Game} />
+      <Route path="ppuzzles" component={Game} />
     </Route>
   </Router>
 );
